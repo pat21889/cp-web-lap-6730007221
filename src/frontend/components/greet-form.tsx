@@ -9,9 +9,7 @@ export function GreetForm() {
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const response = await fetch(
-      `/api/greet?name=${encodeURIComponent(name)}`,
-    );
+    const response = await fetch(`/api/greet?name=${encodeURIComponent(name)}`);
     const body = await response.json();
 
     setMessage(body.message);
